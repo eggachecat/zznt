@@ -1,7 +1,6 @@
 #IDE
 .idea/
-*.jpg
-*.png
+
 
 # Logs
 logs

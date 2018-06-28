@@ -1,0 +1,28 @@
+{
+  "name": "zznt",
+  "version": "1.0.0",
+  "description": "智障囊团",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/eggachecat/zznt.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/eggachecat/zznt/issues"
+  },
+  "homepage": "https://github.com/eggachecat/zznt#readme",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "cors": "^2.8.4",
+    "express": "^4.16.3",
+    "firebase-admin": "^5.12.1",
+    "jsonwebtoken": "^8.3.0",
+    "socket.io": "^2.1.1"
+  }
+}

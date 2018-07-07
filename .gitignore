@@ -1,6 +1,6 @@
 #IDE
 .idea/
-
+python-env/
 assets/
 # Logs
 logs

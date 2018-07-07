@@ -17,6 +17,11 @@ var credentials = {key: privateKey, cert: certificate};
 var httpsServer = https.createServer(credentials, app);
 var httpServer = http.createServer(app);
 
+
+var idiomRouter = require('./app/routers/idiom.router');
+app.use('/api', bodyParser.urlencoded({extended: false}));
+app.use('/api', bodyParser.json({limit: '50mb'}));
+app.use('/api/idiom', idiomRouter);
 app.use(express.static('public'));
 httpsServer.listen(443);
 httpServer.listen(PORT);

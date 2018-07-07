@@ -23,6 +23,8 @@
     "express": "^4.16.3",
     "firebase-admin": "^5.12.1",
     "jsonwebtoken": "^8.3.0",
+    "python-shell": "^0.5.0",
+    "q": "^1.5.1",
     "socket.io": "^2.1.1"
   }
 }

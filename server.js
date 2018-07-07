@@ -13,7 +13,9 @@ if (process.argv.length === 3) {
 }
 var privateKey  = fs.readFileSync('assets/www.qqxf8.cn.key', 'utf8');
 var certificate = fs.readFileSync('assets/www.qqxf8.cn.crt', 'utf8');
-var credentials = {key: privateKey, cert: certificate};
+var certificate_chain = fs.readFileSync('assets/root_bundle.crt', 'utf8');
+
+var credentials = {key: privateKey, cert: certificate, ca:certificate_chain};
 var httpsServer = https.createServer(credentials, app);
 var httpServer = http.createServer(app);
 

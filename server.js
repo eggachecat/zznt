@@ -18,8 +18,8 @@ var httpsServer = https.createServer(credentials, app);
 var httpServer = http.createServer(app);
 
 app.use(express.static('public'));
-httpsServer.listen(433);
+httpsServer.listen(443);
 httpServer.listen(PORT);
 
-console.log('httpsServer: Magic happens on port ' + 433);
+console.log('httpsServer: Magic happens on port ' + 443);
 console.log('httpServer: Magic happens on port ' + PORT);

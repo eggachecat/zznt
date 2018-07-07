@@ -5,7 +5,6 @@ var app = express();
 var cors = require('cors');
 var https = require('https');
 
-var io = require('socket.io')(server);
 
 var PORT = 80;
 if (process.argv.length === 3) {
@@ -14,9 +13,12 @@ if (process.argv.length === 3) {
 var privateKey  = fs.readFileSync('assets/www.qqxf8.cn.key', 'utf8');
 var certificate = fs.readFileSync('assets/www.qqxf8.cn.crt', 'utf8');
 var credentials = {key: privateKey, cert: certificate};
-var server = https.createServer(credentials, app);
+var httpsServer = https.createServer(credentials, app);
+var httpServer = http.createServer(app);
 
 app.use(express.static('public'));
+httpsServer.listen(433);
+httpServer.listen(PORT);
 
-server.listen(PORT);
-console.log('Magic happens on port ' + PORT);
+console.log('httpsServer: Magic happens on port ' + 433);
+console.log('httpServer: Magic happens on port ' + PORT);

@@ -1,0 +1,21 @@
+{
+  "name": "public",
+  "homepage": "https://github.com/eggachecat/zznt",
+  "authors": [
+    "sunao <sunao_0626@hotmail.com>"
+  ],
+  "description": "",
+  "main": "",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "^1.7.2",
+    "angular-route": "^1.7.2"
+  }
+}

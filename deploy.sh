@@ -1,1 +1,1 @@
-nohup node server.js &> server.log &
+nohup node server.js 6666 &> server.log &

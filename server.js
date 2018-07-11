@@ -4,28 +4,24 @@ var bodyParser = require('body-parser');
 var app = express();
 var cors = require('cors');
 var http = require('http');
-var https = require('https');
-
 
 var PORT = 80;
 if (process.argv.length === 3) {
     PORT = parseInt(process.argv[2], 10);
 }
-var privateKey  = fs.readFileSync('assets/www.qqxf8.cn.key', 'utf8');
-var certificate = fs.readFileSync('assets/www.qqxf8.cn.crt', 'utf8');
-var certificate_chain = fs.readFileSync('assets/root_bundle.crt', 'utf8');
 
-var credentials = {key: privateKey, cert: certificate, ca:certificate_chain};
-var httpsServer = https.createServer(credentials, app);
 var httpServer = http.createServer(app);
 
 
 var idiomRouter = require('./app/routers/idiom.router');
+app.use(cors({
+    origin: '*',
+    optionsSuccessStatus: 200
+}));
 app.use('/api', bodyParser.urlencoded({extended: false}));
 app.use('/api', bodyParser.json({limit: '50mb'}));
 app.use('/api/idiom', idiomRouter);
 app.use(express.static('public'));
-httpsServer.listen(443);
 httpServer.listen(PORT);
 
 console.log('httpsServer: Magic happens on port ' + 443);
